@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codememo</title>
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="stylesheet" href="/CSS/prettify.css">
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <!-- <script src="/JS/run_prettify.js"></script> -->
+    <script src="/JS/codememo.js" async></script>
+</head>
+<body>
+    <header>
+        <div class='header-title'>
+            <label class="title">
+                <%= codememo.title %>
+            </label>
+            <a href="/edit/<%= codememo._id %>" class='edit-codememo'>Edit</a>
+            <a href='#' class='remove-codememo'>Remove</a>
+        </div>
+        <div>
+            <a href='/editor.html'>Create new</a>
+            <a href="/">Codememo list</a>
+        </div>
+    </header>
+    <section class="memos">
+        <% codememo.memos.forEach(m => { %>
+            <% if(m.language === 'text'){ %>
+                <pre><%= m.content %></pre>
+            <% } else { %>
+                <pre class='prettyprint 
+                    <% if(m.language) {%>
+                        lang-<%=m.language %>
+                    <%}%>'
+                ><%= m.content %></pre>
+            <% } %>
+        <% }) %>
+    </section>
+</body>
+</html>

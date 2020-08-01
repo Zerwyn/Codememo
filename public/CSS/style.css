@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    font-size: 16px;
+    tab-size: 2;
+}
+
+body{
+    background-color: #222222;
+    color: #dff9fb;
+}
+
+a{
+    color: greenyellow;
+}
+a:hover{
+    color: #6ab04c;
+}
+
+/* Header */
+header{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    align-items:baseline;
+    background:#30336b;
+    color: greenyellow;
+    padding:10px;
+    margin-bottom:10px;
+}
+
+/* Header title section */
+header-title{
+    display:flex;
+    justify-content:stretch;
+}
+
+.edit-memo{
+    cursor: pointer;
+}
+
+header .title{
+    font-size:1.6em;
+    margin-right:10px;
+}
+
+/* Header menu section */
+header a {
+    font-size: 1.2em;
+}
+header a:hover {
+    color: #6ab04c;
+}
+
+/* memos link list homepage */
+
+.memos-menu{
+    list-style: none;
+    margin: 20px;
+    padding:0;
+}
+
+.memos-menu li{
+    background-color: #535c68;
+    position: relative; /* needed for hover movement */
+    border: solid 1px;
+    
+}
+.memos-menu li:hover{
+    left: 20px;
+    background-color: #636c78;
+}
+
+.memos-menu li a{
+    display: block; /* set all the li line clickable */
+    padding: 10px;
+    text-decoration: none;
+}
+
+/* Show memos page */
+
+.memos{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:flex-start;
+    align-content: space-around;
+}
+
+/* Memos editor */
+
+.snippet-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.memos textarea{
+    padding: 5px;
+    margin: 10px;
+    height: 20em;
+    width: 20em;
+    max-width: 80em;
+    background-color: #535c68;
+    color: #dff9fb;
+}
